@@ -14,10 +14,11 @@ chi <- read.csv("chicago.csv")
 
 
 
+
 data_all <- list.files(pattern = "*.csv", full.names = T) %>%
   lapply(read.csv) %>% bind_rows()
-  
-  
+
+
 
 # Question 1: What is the most common users ages on Chicago and New york cities have?
 
@@ -28,16 +29,16 @@ ggplot(aes(x = City, y = Birth.Year), data = data_all) + geom_point()
 
 
 # Question 2: What are the counts of each user type?
-data_all %>% 
+data_all %>%
   filter(User.Type == "Customer" | User.Type == "Subscriber") %>%
   drop_na(User.Type) %>%
-  ggplot(aes(User.Type), fill = User.Type) + 
+  ggplot(aes(User.Type), fill = User.Type) +
   geom_bar(position = "dodge",
            alpha = 0.5 ) +
   labs(title = "Total User type", x = "User type", y = "Number")
-  
+
 # It seems that the most user types in all cities are subscribers.
- 
+
 
 # Question 3: What are the counts of each gender (only available for NYC and Chicago)?
 total = sort(table(data_all$Gender))
@@ -45,15 +46,15 @@ print(total)
 
 round((total / length(data_all$Gender) * 100), digits = 2)
 
-data_all %>% 
+data_all %>%
   filter(Gender == "Female" | Gender == "Male") %>%
   drop_na(Gender) %>%
 ggplot(aes(Gender), fill = City) +
   geom_bar(position = 'dodge', colour="black") +
   ggtitle('counts of each gender on NYC and Chicago') +
   scale_x_discrete(labels = c('Female', 'Male')) +
-  labs(y = 'Total Number', x = 'Gender') 
+  labs(y = 'Total Number', x = 'Gender')
 
 # It seems that the most riders are males.
 
-
+print("finish coding")

@@ -13,5 +13,4 @@ Bikeshare data analysis for Chicago, Newyork and Washington cities.
 I used chicago, newyork and washington data files.
 
 ### Credits
-Thanks to udacity mentors.
-
+Thanks to all udacity team and mentors, and hope to achive more in the future.
