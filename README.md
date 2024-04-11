@@ -7,7 +7,7 @@
 Bikeshare.
 
 ### Description
-Bikeshare data analysis.
+Bikeshare data analysis for Chicago, Newyork and Washington cities.
 
 ### Files used
 I used chicago, newyork and washington data files.
